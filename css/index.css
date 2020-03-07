@@ -171,7 +171,7 @@ img {
 h1 {
   font-family: 'Roboto', sans-serif;
 }
-.navigation {
+nav .navigation {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -181,7 +181,7 @@ h1 {
   opacity: 0.7;
   border-radius: 3rem;
 }
-.navigation a {
+nav .navigation a {
   background-color: #4E6E58;
   font-size: 2rem;
   text-decoration: none;
@@ -191,21 +191,61 @@ h1 {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+@media (max-width: 500px) {
+  nav {
+    background-color: #4C8577;
+  }
+}
 body,
 html {
   margin: 0;
   padding: 0;
 }
-.container {
-  padding-bottom: -7rem;
+.container h1 {
+  text-align: center;
 }
-.wrapper {
+@media (max-width: 500px) {
+  .container .container {
+    background-color: #4C8577;
+  }
+  .container .container .wrapper {
+    background-color: #A6ECE0;
+    border-radius: 3rem;
+  }
+  .container .container .wrapper .parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -700rem;
+    left: 0;
+  }
+  .container .container .wrapper .bg1 h1 {
+    padding-bottom: 19rem;
+  }
+  .container .container .wrapper .bg2 h1 {
+    padding-top: 20rem;
+  }
+  .container .container .wrapper .bg1::after {
+    margin: -85rem;
+    background-repeat: no-repeat;
+  }
+  .container .container .wrapper .bg2::after {
+    margin-top: 22rem;
+    margin-bottom: 8rem;
+    background-repeat: no-repeat;
+  }
+}
+.container .wrapper {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 2px;
 }
-.wrapper .section {
+.container .wrapper .bg1 h1 {
+  padding-top: -30rem;
+}
+.container .wrapper .section {
   font-family: 'Roboto', sans-serif;
   position: relative;
   height: 100vh;
@@ -214,9 +254,9 @@ html {
   align-items: center;
   flex-direction: column;
   color: white;
-  text-shadow: 0 0 5px #A6ECE0;
+  text-shadow: 0 0 5px #544B3D;
 }
-.wrapper .parallax::after {
+.container .wrapper .parallax::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -227,13 +267,17 @@ html {
   background-size: 100%;
   z-index: -1;
 }
-.wrapper .static {
+.container .wrapper .static {
   background: #544B3D;
+  border-radius: 5rem;
 }
-.wrapper .bg1::after {
+.container .wrapper .bg1::after {
+  margin: -85rem;
+  background-repeat: no-repeat;
   background-image: url('https://images.unsplash.com/uploads/1411901100260f56b39b9/ab70b250?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
 }
-.wrapper .bg2::after {
+.container .wrapper .bg2::after {
+  margin: -35rem;
+  background-repeat: no-repeat;
   background-image: url('https://images.unsplash.com/photo-1558942594-272eab34c8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-  padding-bottom: -5rem;
 }
