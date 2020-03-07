@@ -226,7 +226,6 @@ html {
     padding-top: 20rem;
   }
   .container .wrapper .bg1::after {
-    margin: -85rem;
     background-repeat: no-repeat;
   }
   .container .wrapper .bg2::after {
